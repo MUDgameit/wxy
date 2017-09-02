@@ -1,0 +1,50 @@
+﻿  monster.cpp
+c:\users\wxy\desktop\mudgame\mudgame\monster.h(12): error C2535: “std::string monster::returnName(void)”: 已经定义或声明成员函数
+  c:\users\wxy\desktop\mudgame\mudgame\monster.h(11): note: 参见“monster::returnName”的声明
+c:\users\wxy\desktop\mudgame\mudgame\monster.cpp(5): error C2011: “monster”:“class”类型重定义
+  c:\users\wxy\desktop\mudgame\mudgame\monster.h(4): note: 参见“monster”的声明
+  fighting.cpp
+c:\users\wxy\desktop\mudgame\mudgame\monster.h(12): error C2535: “std::string monster::returnName(void)”: 已经定义或声明成员函数
+  c:\users\wxy\desktop\mudgame\mudgame\monster.h(11): note: 参见“monster::returnName”的声明
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(8): error C2061: 语法错误: 标识符“character”
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(56): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(56): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(56): error C2238: 意外的标记位于“;”之前
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(10): error C2039: “character”: 不是“fighting”的成员
+  c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(6): note: 参见“fighting”的声明
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(10): error C2065: “character”: 未声明的标识符
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(16): error C2039: “character”: 不是“fighting”的成员
+  c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(6): note: 参见“fighting”的声明
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(16): error C2059: 语法错误:“==”
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(18): error C2181: 没有匹配 if 的非法 else
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(18): error C2039: “character”: 不是“fighting”的成员
+  c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(6): note: 参见“fighting”的声明
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(18): error C2059: 语法错误:“>”
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(20): error C2181: 没有匹配 if 的非法 else
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(24): error C2227: “->judge”的左边必须指向类/结构/联合/泛型类型
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(35): error C3867: “monster::fighting”: 非标准语法；请使用 "&" 来创建指向成员的指针
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(35): error C2297: “-=”: 非法，右操作数包含“int (__thiscall monster::* )(void)”类型
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(38): warning C4551: 缺少参数列表的函数调用
+c:\users\wxy\desktop\mudgame\mudgame\fighting.cpp(38): error C3867: “fighting::judge”: 非标准语法；请使用 "&" 来创建指向成员的指针
+  equipment.cpp
+c:\users\wxy\desktop\mudgame\mudgame\equipment.cpp(39): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\wxy\desktop\mudgame\mudgame\equipment.cpp(28): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 参见“strcpy”的声明
+c:\users\wxy\desktop\mudgame\mudgame\equipment.cpp(29): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 参见“strtok”的声明
+c:\users\wxy\desktop\mudgame\mudgame\equipment.cpp(31): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 参见“strtok”的声明
+  character.cpp
+  Weapon.cpp
+c:\users\wxy\desktop\mudgame\mudgame\weapon.cpp(42): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\wxy\desktop\mudgame\mudgame\weapon.cpp(28): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 参见“strcpy”的声明
+c:\users\wxy\desktop\mudgame\mudgame\weapon.cpp(29): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 参见“strtok”的声明
+c:\users\wxy\desktop\mudgame\mudgame\weapon.cpp(31): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 参见“strtok”的声明
+  正在生成代码...
+  正在编译...
+  Bag.cpp
+c:\users\wxy\desktop\mudgame\mudgame\bag.cpp(17): warning C4553: “==”: 运算符不起任何作用；是否是有意使用“=”的?
+  正在生成代码...
