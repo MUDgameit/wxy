@@ -4,14 +4,17 @@
 using namespace std;
 class Skill {
 private:
-	string skill[10];
-	int flag[10];
-	int damage[10];
-	int consumption[10];
+	string skill[11];
+	int flag[11];
+	int damage[11];
+	int consumption[11];
 public:
 	Skill();
+	void setSkillLearned(int i);
+	bool iflearnt(int i);
 	void LearnSkill(string name);
 	int UseSkill(int name, int force);
 	int getSkilldamage(int i);
 	int getSkillconsumption(int k);
+	void showSkill();
 };

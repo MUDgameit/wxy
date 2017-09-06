@@ -1,13 +1,15 @@
-ï»¿#include "character.h"
+#include "character.h"
 #include "weapon.h"
 #include "equipment.h"
 #include <iostream>
 #include <string>
-
+#include <stdlib.h>
+#include<Windows.h>
 using namespace std;
 
 Character::Character(string my_name) {
 	name = my_name;
+	level = 1;
 	strength = 20;
 	hit_rate = 0.8;
 	attack_speed = 100;
@@ -22,6 +24,17 @@ Character::Character(string my_name) {
 	my_chest = NULL;
 	my_leg = NULL;
 	Negative_state_rate = 0;
+	HANDLE consolehwnd;
+	consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(consolehwnd, 14);
+	cout << "´´½¨ÈËÎï³É¹¦£¡" << endl;
+	system("pause");
+	system("cls");
+}
+
+int Character::getLevel()
+{
+	return level;
 }
 
 double Character::getStrength() {
@@ -61,7 +74,48 @@ double Character::getForceRate() {
 double Character::getInterForce() {
 	return inter_force;
 }
+void Character::setLevel(int i)
+{
+	level = i;
+}
 
+void Character::setStrength(double i) {
+	strength = i;
+}
+
+void Character::setHitRate(double i) {
+	hit_rate = i;
+}
+
+void Character::setAttackSpeed(double i) {
+	attack_speed = i;
+}
+
+void Character::setDefense(double i) {
+	defense = i;
+}
+
+void Character::setAvoidRate(double i) {
+	avoid_rate = i;
+}
+
+void  Character::setLife(double i) {
+	life = i;
+}
+void Character::setNegative_state_rate(double i) {
+	Negative_state_rate = i;
+}
+void Character::setExperience(double i) {
+	 experience=i;
+}
+
+void Character::setForceRate(double i) {
+	 force_rate=i;
+}
+
+void Character::setInterForce(double i) {
+	 inter_force=i;
+}
 void Character::setWeapon(Weapon * weapon) {
 	if (my_weapon == NULL) {
 		my_weapon = weapon;
@@ -74,13 +128,19 @@ void Character::setWeapon(Weapon * weapon) {
 		weapon->setEquipment(true);
 	}
 	else {
-		cout << "è£…å¤‡å¤±è´¥ï¼" << endl;
+		HANDLE consolehwnd;
+		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(consolehwnd, 12);
+		cout << "×°±¸Ê§°Ü£¡" << endl;
 	}
 }
 
 void Character::setShoulder(Equipment * shoulder) {
 	if (shoulder->getCategory() != 1 || my_shoulder != NULL) {
-		cout << "è£…å¤‡å¤±è´¥ï¼" << endl;
+		HANDLE consolehwnd;
+		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(consolehwnd, 12);
+		cout << "×°±¸Ê§°Ü£¡" << endl;
 	}
 	else {
 		my_shoulder = shoulder;
@@ -93,7 +153,10 @@ void Character::setShoulder(Equipment * shoulder) {
 
 void Character::setChest(Equipment * chest) {
 	if (chest->getCategory() != 2 || my_chest != NULL) {
-		cout << "è£…å¤‡å¤±è´¥ï¼" << endl;
+		HANDLE consolehwnd;
+		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(consolehwnd, 12);
+		cout << "×°±¸Ê§°Ü£¡" << endl;
 	}
 	else {
 		my_chest = chest;
@@ -106,7 +169,10 @@ void Character::setChest(Equipment * chest) {
 
 void Character::setLeg(Equipment * leg) {
 	if (leg->getCategory() != 3 || my_leg != NULL) {
-		cout << "è£…å¤‡å¤±è´¥ï¼" << endl;
+		HANDLE consolehwnd;
+		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(consolehwnd, 12);
+		cout << "×°±¸Ê§°Ü£¡" << endl;
 	}
 	else {
 		my_leg = leg;
@@ -129,13 +195,19 @@ void Character::getOffWeapon() {
 		my_weapon = NULL;
 	}
 	else {
-		cout << "æš‚æœªè£…å¤‡ä»»ä½•æ­¦å™¨ï¼" << endl;
+		HANDLE consolehwnd;
+		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(consolehwnd, 12);
+		cout << "ÔÝÎ´×°±¸ÈÎºÎÎäÆ÷£¡" << endl;
 	}
 }
 
 void Character::getOffShoulder() {
 	if (my_shoulder == NULL) {
-		cout << "æš‚æœªè£…å¤‡ä»»ä½•æŠ¤è‚©ï¼" << endl;
+		HANDLE consolehwnd;
+		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(consolehwnd, 12);
+		cout << "ÔÝÎ´×°±¸ÈÎºÎ»¤¼ç£¡" << endl;
 	}
 	else {
 		defense -= my_shoulder->getDefense();
@@ -148,7 +220,10 @@ void Character::getOffShoulder() {
 
 void Character::getOffChest() {
 	if (my_chest == NULL) {
-		cout << "æš‚æœªè£…å¤‡ä»»ä½•èƒ¸ç”²ï¼" << endl;
+		HANDLE consolehwnd;
+		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(consolehwnd, 12);
+		cout << "ÔÝÎ´×°±¸ÈÎºÎÐØ¼×£¡" << endl;
 	}
 	else {
 		defense -= my_chest->getDefense();
@@ -161,7 +236,10 @@ void Character::getOffChest() {
 
 void Character::getOffLeg() {
 	if (my_leg == NULL) {
-		cout << "æš‚æœªè£…å¤‡ä»»ä½•æŠ¤è…¿ï¼" << endl;
+		HANDLE consolehwnd;
+		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(consolehwnd, 12);
+		cout << "ÔÝÎ´×°±¸ÈÎºÎ»¤ÍÈ£¡" << endl;
 	}
 	else {
 		defense -= my_leg->getDefense();
@@ -174,30 +252,33 @@ void Character::getOffLeg() {
 
 string Character::getWeaponName() {
 	if (my_weapon == NULL)
-		return "æ— ";
+		return "ÎÞ";
 	else
 		return my_weapon->getName();
 }
 
 string Character::getShoulderName() {
 	if (my_shoulder == NULL)
-		return "æ— ";
+		return "ÎÞ";
 	else
 		return my_shoulder->getName();
 }
 
 string Character::getChestName() {
 	if (my_chest == NULL)
-		return "æ— ";
+		return "ÎÞ";
 	else
 		return my_chest->getName();
 }
 
 string Character::getLegName() {
 	if (my_leg == NULL)
-		return "æ— ";
+		return "ÎÞ";
 	else
 		return my_leg->getName();
+}
+string Character::getName() {
+	return name;
 }
 
 void Character::changeAttributes(int name, double point) {
@@ -244,7 +325,7 @@ void Character::changeAttributes(int name, double point) {
 	}
 	default:
 	{
-		cout << "è¯¥å±žæ€§ä¸å­˜åœ¨ï¼" << endl;
+		cout << "¸ÃÊôÐÔ²»´æÔÚ£¡" << endl;
 		break;
 	}
 	}

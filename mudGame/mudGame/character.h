@@ -11,6 +11,7 @@ using namespace std;
 class Character {
 public:
 	Character(string my_name);
+	int getLevel();
 	double getStrength();
 	double getHitRate();
 	double getAttackSpeed();
@@ -33,10 +34,23 @@ public:
 	string getShoulderName();
 	string getChestName();
 	string getLegName();
+	string getName();
+	void setLevel(int );
+	void setStrength(double);
+	void setHitRate(double);
+	void setAttackSpeed(double);
+	void setDefense(double);
+	void setAvoidRate(double);
+	void setLife(double);
+	void setExperience(double);
+	void setForceRate(double);
+	void setInterForce(double);
+	void setNegative_state_rate(double);
 	// 力量为1，命中率为2，攻击速度为3，防御力为4，回避率为5，生命值为6，经验值为7，暴击率为8
 	void changeAttributes(int name, double point);
 private:
 	string name;
+	int level;
 	double strength;
 	double hit_rate;
 	double attack_speed;

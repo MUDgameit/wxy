@@ -2,5 +2,4 @@
 class Attributes {
 public:
 	void addAttributes();
-
 };

@@ -1,14 +1,15 @@
 #pragma once
 #include<string>
+#include<cstring>
+#include<cstdlib>
 using namespace std;
-class monster {
+class Monster {
 public:
-	monster();
+	Monster(string,string);
 	int fighting();
 	int defense(int hurt, int probability);
 	string fall();
 	string returnSkill();
-	string returnName();
 	string returnName();
 	int returnLife();
 	int getAttackSpeed();
@@ -18,7 +19,8 @@ private:
 	int power;
 	int defenses;
 	string article;
-	int probability;
+	int probabilityFall;
 	string skill;
 	int damage[5];
+	int speed;
 };

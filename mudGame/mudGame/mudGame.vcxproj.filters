@@ -42,7 +42,37 @@
     <ClCompile Include="character.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="task.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyMountain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WuDang.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DemonMountain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GreenCityMountain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DemonShrine.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="equipment.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="operating.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Article.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="save.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,7 +101,37 @@
     <ClInclude Include="character.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="task.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyMountain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WuDang.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DemonMountain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GreenCityMountain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DemonShrine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="equipment.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="operating.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Article.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="save.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
