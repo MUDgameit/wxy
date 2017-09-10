@@ -1,7 +1,4 @@
 #include "operating.h"
-#include <windows.h> 
-#include <winnt.h> 
-#include <stdio.h> 
 
 operating::operating()
 {
@@ -9,10 +6,11 @@ operating::operating()
 
 int operating::showStartMenu()
 {
-	int choice;
+	PlaySound(TEXT("E:\\BaiduNetdiskDownload\\a.wav"), NULL, SND_ASYNC | SND_LOOP);
 	HANDLE consolehwnd;
 	consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(consolehwnd, 10);
+	SetConsoleTextAttribute(consolehwnd, 9);
+	int choice;
 	cout << "1.开始游戏  2.读取存档  3.退出" << endl << "请输入你的选择：";
 	try {
 		if (cin >> choice)
@@ -22,13 +20,11 @@ int operating::showStartMenu()
 			case 1:choice = 1; break;
 			case 2:choice = 2; break;
 			case 3:choice = 0; break;
-			SetConsoleTextAttribute(consolehwnd, 12);
 			default:throw Error("输入不符合规范，请输入数字1-3");
 			}
 		}
 		else
 		{
-			SetConsoleTextAttribute(consolehwnd, 12);
 			throw Error("输入不符合规范，请输入数字1-3");
 		}
 	}
@@ -52,9 +48,6 @@ string operating::getGamerName()
 {
 	system("cls");
 	string name;
-	HANDLE consolehwnd;
-	consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(consolehwnd, 14);
 	cout << "请输入人物名称：";
 	try
 	{
@@ -66,7 +59,6 @@ string operating::getGamerName()
 		}
 		else
 		{
-			SetConsoleTextAttribute(consolehwnd, 12);
 			throw Error("输入角色名应中文长度不超过五，英文不超过十，且不含空格。");
 		}
 	}
@@ -111,17 +103,11 @@ int operating::showMainMenu(Character & gamer)
 			case 2:return 2;
 			case 3:return 3;
 			case 4:return 0;
-				HANDLE consolehwnd;
-				consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
-				SetConsoleTextAttribute(consolehwnd, 12);
 			default:throw Error("输入不符合规范，请输入数字1-4");
 			}
 		}
 		else
 		{
-			HANDLE consolehwnd;
-			consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
-			SetConsoleTextAttribute(consolehwnd, 12);
 			throw Error("输入不符合规范，请输入数字1-4");
 		}
 	}
@@ -142,9 +128,6 @@ int operating::showMainMenu(Character & gamer)
 
 int operating::showMap(task &myTask)
 {
-	HANDLE consolehwnd;
-	consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(consolehwnd, 14);
 	int numberOfTask = myTask.getNowTask();
 	if(numberOfTask < 5)
 	{
@@ -188,17 +171,11 @@ int operating::showMap(task &myTask)
 			case 4:return 4;
 			case 5:return 5;
 			case 0:return 0;
-				HANDLE consolehwnd;
-				consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
-				SetConsoleTextAttribute(consolehwnd, 12);
 			default:throw Error("输入不符合规范，请输入数字1-5");
 			}
 		}
 		else
 		{
-			HANDLE consolehwnd;
-			consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
-			SetConsoleTextAttribute(consolehwnd, 12);
 			throw Error("输入不符合规范，请输入数字1-5");
 		}
 	}
@@ -210,18 +187,17 @@ int operating::showMap(task &myTask)
 		// ignore 函数在此将把输入流中的数据清空。
 		cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 		cout << e.what() << endl;
+		HANDLE consolehwnd;
+		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(consolehwnd, 9);
 	}
 	
 	return 0;
 }
 
 int operating::showStory(Character &amy)
-
 {
-	HANDLE consolehwnd;
-	consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(consolehwnd, 11);
-	printf("这是一个寒冷的冬天。\n");
+	cout << "这是一个寒冷的冬天。\n";
 	cin.get();
 	cout << amy.getName() <<
 		"刚刚过完了他的16岁生日。从小父母双亡的他是在一个大雪纷飞的冬日被师父报上山来抚养长大的。师父是雪山派的掌门，这些年对他也是悉心教导，在他看来，师父就像父亲一样。和他平日一同习武的还有他的小师妹（张清娴），两人感情也是相当的亲厚。\n一个看似寻常的日子，A刚脱下外套准备就寝的时候，一个黑影突然出现在窗外——\n";
@@ -275,24 +251,19 @@ int operating::showStory(Character &amy)
 	int choice;
 	while (true)
 	{
-		try {
+		try 
+		{
 			if (cin >> choice)
 			{
 				switch (choice)
 				{
 				case 1:return 1;
 				case 2:return 2;
-					HANDLE consolehwnd;
-					consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
-					SetConsoleTextAttribute(consolehwnd, 12);
 				default:throw Error("输入不符合规范，请输入数字1-2");
 				}
 			}
 			else
 			{
-				HANDLE consolehwnd;
-				consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
-				SetConsoleTextAttribute(consolehwnd, 12);
 				throw Error("输入不符合规范，请输入数字1-2");
 			}
 		}
@@ -306,4 +277,5 @@ int operating::showStory(Character &amy)
 			cout << e.what() << endl;
 		}
 	}
+	return 0;
 }

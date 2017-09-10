@@ -4,7 +4,6 @@
 #include <string>
 #include <string.h>
 #include <stdlib.h>
-#include<Windows.h>
 
 using namespace std;
 
@@ -75,9 +74,6 @@ void Equipment::setEquipment(bool status) {
 
 void Equipment::showInformation()
 {
-	HANDLE consolehwnd;
-	consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(consolehwnd, 14);
 	cout << "Ãû³Æ£º" << this->getName() << "\t" << "ÉúÃü£º" << this->getLife() << "\t" <<
 		"·ÀÓù£º" << this->getDefense() << "\t" << "ÉÁ±Ü£º" << this->getAvoidRate();
 }

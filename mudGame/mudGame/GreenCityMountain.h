@@ -1,13 +1,17 @@
 #pragma once
 #include"layer.h"
+#include"monster.h"
 #include"task.h"
+#include"fighting.h"
+#include"character.h"
 class GreenCityMountain : public layer {
 public:
-	GreenCityMountain(string, task *);
+	GreenCityMountain(string, task *, Character *);
 	~GreenCityMountain();
 	void judgeTask();
 	//ÒÆ¶¯
 	void move(int);
+	void operate(Character *);
 private:
 	//Ð¡µØÍ¼
 	string smalllayer[5];

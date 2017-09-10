@@ -22,19 +22,20 @@ Monster::Monster(string name,string skillName) {//读文件怪信息
 		if (textline[j].find(name) != string::npos) {
 			strcpy(str, textline[j].c_str());
 			p = strtok(str, split);
-			while (p != NULL && k < 5) {
+			while (p + 1 != NULL && k < 5) {
 				data[k] = atof(strtok(NULL, split));
 				k++;
 			}
 		}
 	}
 	this->name = name;
-	life = data[0];
+	life = data[0];//出错
 	power = data[1];
 	defenses = data[2];
 	skill = str;
 	speed = data[3];
 	probabilityFall = data[4];
+	life = 100;
 }
 
 
