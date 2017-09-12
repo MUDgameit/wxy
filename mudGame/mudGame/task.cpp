@@ -69,13 +69,23 @@ void task::showTask()
 
 bool task::ifTaskFinish(int i)
 {
-	if (ifFinishTask[i] = 0)
+	if (ifFinishTask[i] == 0)
 		return false;
 	else
 		return true;
 }
 
 void task::finishTask(int choice)
+{
+	if (!this->ifTaskFinish(choice))
+	{
+
+		ifFinishTask[choice] = 1;
+		nowTask++;
+	}
+	
+}
+void task::finishNowTask(int choice)
 {
 	if (nowTask == 0 || nowTask == 10 || nowTask == 14)
 	{
@@ -88,7 +98,10 @@ void task::finishTask(int choice)
 		nowTask++;
 	}
 }
-
+int task::getTaskInformation(int i)
+{
+	return ifFinishTask[i];
+}
 void task::printFinishedTask()
 {
 	if (nowTask != 0)

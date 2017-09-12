@@ -9,15 +9,20 @@ class Equipment :public Article{
 public:
     Equipment(string my_name);
     string getName();
+	double  getStrength() { return 0; }
+	double getHitRate() { return 0; }
+	double getForceRate() { return 0; }
+	double getAttackSpeed() { return 0; }
     int getCategory();
     double getDefense();
     double getAvoidRate();
     double getLife();
     void setEquipment(bool status);
+	bool getHas_Equip();
 	void showInformation();
 private:
     string name; // 名称
-    int category; // 护肩为1，胸甲为2，护腿为3
+    int category; // 护肩为1，胸甲为2，护腿为3，武器为4
     double defense; // 防御
     double avoid_rate; // 回避率
     double life; // 生命

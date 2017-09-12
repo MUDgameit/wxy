@@ -10,10 +10,10 @@
 using namespace std;
 class fighting {
 public:
-	fighting(Monster*, Character*, task*);
+	fighting(Monster*, Character*, task*, int);
 	bool judge();
 	int firstRound();
-	void fight(task*);//战斗结束后人物经验提升与法力恢复
+	void fight(task*, int);//战斗结束后人物经验提升与法力恢复
 private:
 	int enemyslife;
 	int mylife;

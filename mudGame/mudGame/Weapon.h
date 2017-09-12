@@ -18,7 +18,9 @@ public:
     double getAttackSpeed();
     int judgeDistance(); // 判断是否为远程武器
     void setEquipment(bool status);
+	bool getHas_Equip();
 	void showInformation();
+	int getCategory();
 private:
     string name; // 名称
     double strength; // 力量
@@ -29,6 +31,7 @@ private:
     double attack_speed; // 攻击速度
     int is_distance; // 是否为远程武器
     bool has_equip; // 是否装备
+	int category; // 护肩为1，胸甲为2，护腿为3，武器为4
 };
 
 

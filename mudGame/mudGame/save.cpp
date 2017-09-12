@@ -35,12 +35,12 @@ save::save(Character * character, Bag *bag, Skill *skill, task *task) {//´æµµµÄÊ
 		obag.close();
 	ofstream oskill("SkillName.txt");
 	for (int j = 0; j < 11; j++) {
-		if (skill->iflearnt)
+		if (skill->iflearnt(j))
 			oskill << j;
 	}
 	oskill.close();
 	ofstream otask("task.txt");
-	for (int j = 0; j < task->getNowTask; j++) {
+	for (int j = 0; j < task->getNowTask(); j++) {
 		otask << j;
 	}
 	otask.close();

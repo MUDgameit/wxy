@@ -72,6 +72,11 @@ void Equipment::setEquipment(bool status) {
     has_equip = status;
 }
 
+bool Equipment::getHas_Equip()
+{
+	return has_equip;
+}
+
 void Equipment::showInformation()
 {
 	cout << "Ãû³Æ£º" << this->getName() << "\t" << "ÉúÃü£º" << this->getLife() << "\t" <<

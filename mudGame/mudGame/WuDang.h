@@ -15,7 +15,7 @@ public:
 private:
 	//ะกตุอผ
 	string smalllayer[6];
-	string smalllayerintroduction[6];
+	string smalllayerintroduction[10];
 	//นึฮ๏
 	string monstername[6];
 	task * point;

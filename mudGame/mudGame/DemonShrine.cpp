@@ -1,5 +1,6 @@
 #include"DemonShrine.h"
 DemonShrine::DemonShrine(string layername, task* point,Character*gamer) :layer(layername), point(point), ifFinishTask(false) {
+	system("cls");
 	changelayerintroduction("");
 	changetreasure("武器");
 
@@ -17,7 +18,7 @@ DemonShrine::DemonShrine(string layername, task* point,Character*gamer) :layer(l
 	monstername[3] = "魔教长老肆";
 	monstername[4] = "魔教长老伍";
 	monstername[5] = "魔教教主";
-
+	operate(gamer);
 }
 DemonShrine::~DemonShrine() {
 
@@ -37,123 +38,28 @@ void DemonShrine::move(int i) {
 
 void DemonShrine::operate(Character *gamer)
 {
+	int choice = 0;
 	while (true)
 	{
+		system("cls");
 		int taskState = point->getNowTask();
-		switch (taskState)
-		{
-		case 1:cout << "1.天山山脚\t0.返回" << endl; break;
-		case 2:cout << "1.天山山脚\t2.天山山麓\t0.返回" << endl; break;
-		case 3:cout << "1.天山山脚\t2.天山山麓\t3.天山天池\t0.返回" << endl; break;
-		case 4:cout << "1.天山山脚\t2.天山山麓\t3.天山天池\t4.天山山顶\t0.返回" << endl;
-		}
-		cout << "请输入你选择的地点：";
-		int choice = 1;
-		try {
-			if (cin >> choice)
-			{
-				switch (choice)
-				{
-				case 1:
-				{
-					if (taskState > 0)
-					{
-						cout << smalllayerintroduction[0] << endl;
-						Monster monster = Monster("陶云", "普通攻击");
-						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+		
+		cout << smalllayerintroduction[0] << endl;
+		Monster monster1("魔教长老壹", "普通攻击","双刃巨剑");
+		system("pause");
+		fighting fight1 = fighting(&monster1, gamer, point, 11);
+		Monster monster2("魔教长老贰", "普通攻击", "千年玄铁兽胸甲");
+		fighting fight2 = fighting(&monster2, gamer, point, 11);
+		Monster monster3("魔教长老叁", "普通攻击", "魔战钢铁腿甲");
+		fighting fight3 = fighting(&monster3, gamer, point, 11);
+		Monster monster4("魔教长老肆", "普通攻击", "灵斗者的蚕丝护肩");
+		fighting fight4 = fighting(&monster4, gamer, point, 11);
+		Monster monster5("魔教长老伍", "普通攻击", "巨兽之魂绑腿");
+		fighting fight5 = fighting(&monster5, gamer, point, 11);
 
-						break;
-					}
-					else
-					{
-						Monster monster = Monster("陶云", "普通攻击");
-						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
-						break;
-					}
-				}
-				case 2:
-				{
-					if (taskState > 1)
-					{
-						cout << smalllayerintroduction[1] << endl;
-						Monster monster = Monster("孙泽翼", "普通攻击");
-						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+		Monster monster6("魔教教主", "普通攻击", "紫榆绑腿");
+		cout << smalllayerintroduction[6] << endl;
+		cout << "恭喜通过！" << endl;
 
-						break;
-					}
-					else
-					{
-						Monster monster = Monster("孙泽翼", "普通攻击");
-						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
-						break;
-					}
-				}
-				case 3:
-				{
-					if (taskState > 2)
-					{
-						cout << smalllayerintroduction[2] << endl;
-						Monster monster = Monster("璃音", "普通攻击");
-						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
-
-						break;
-					}
-					else
-					{
-						Monster monster = Monster("璃音", "普通攻击");
-						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
-						break;
-					}
-				}
-				case 4:
-				{
-					if (taskState > 3)
-					{
-						cout << smalllayerintroduction[3] << endl;
-						Monster monster = Monster("天山老怪", "普通攻击");
-						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
-
-						break;
-					}
-					else
-					{
-						Monster monster = Monster("天山老怪", "普通攻击");
-						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
-						break;
-					}
-				}
-				case 0:
-				{
-					break;
-				}
-				default:throw Error("输入不符合规范，请输入数字1-4");
-				}
-			}
-			else
-			{
-				throw Error("输入不符合规范，请输入数字1-4");
-			}
-		}
-		catch (Error &e) {
-			// 读到非法字符后，输入流将处于出错状态，
-			// 为了继续获取输入，首先要调用 clear 函数
-			cin.clear();
-			// numeric_limits<streamsize>::max() 返回输入缓冲的大小。
-			// ignore 函数在此将把输入流中的数据清空。
-			cin.ignore((numeric_limits<streamsize>::max)(), '\n');
-			cout << e.what() << endl;
-		}
-		if (choice == 0)
-		{
-			break;
-		}
 	}
 }

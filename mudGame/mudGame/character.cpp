@@ -7,7 +7,7 @@
 #include<Windows.h>
 using namespace std;
 
-Character::Character(string my_name) {
+Character::Character(string my_name, Skill*myskill,Bag*mybag) {
 	name = my_name;
 	level = 1;
 	strength = 20;
@@ -23,6 +23,8 @@ Character::Character(string my_name) {
 	my_shoulder = NULL;
 	my_chest = NULL;
 	my_leg = NULL;
+	my_skill = myskill;
+	my_bag = mybag;
 	Negative_state_rate = 0;
 	HANDLE consolehwnd;
 	consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -30,6 +32,11 @@ Character::Character(string my_name) {
 	cout << "创建人物成功！" << endl;
 	system("pause");
 	system("cls");
+}
+
+Character::Character()
+{
+	
 }
 
 int Character::getLevel()
@@ -62,6 +69,13 @@ double Character::getLife() {
 }
 double Character::getNegative_state_rate() {
 	return Negative_state_rate;
+}
+void Character::levelUp()
+{
+	level += 1;
+	strength += 5;
+	defense += 5;
+	life += 50;
 }
 double Character::getExperience() {
 	return experience;
@@ -329,6 +343,16 @@ void Character::changeAttributes(int name, double point) {
 		break;
 	}
 	}
+}
+
+Skill * Character::getSkill()
+{
+	return my_skill;
+}
+
+Bag * Character::getBag()
+{
+	return my_bag;
 }
 
 

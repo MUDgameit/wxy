@@ -8,6 +8,7 @@
 #include"character.h"
 #include<vector>
 #include<limits>
+class Character;
 using namespace std;
 class Bag {
 private:
@@ -16,7 +17,7 @@ private:
 public:
 	void DeleteWeapon(int i);
 	void AddWeapon(string name);
-	void ShowWeapon();
+	void ShowWeapon(Character&);
 	int getNum();
 	Bag();
 };

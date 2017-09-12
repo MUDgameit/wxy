@@ -19,6 +19,8 @@ public:
 	void printFinishedTask();
 	void printNowTask();
 	int getNowTask();
+	void finishNowTask(int);
+	int getTaskInformation(int);
 private:
 	int nowTask;
 	string taskContent[25];

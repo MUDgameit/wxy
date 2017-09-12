@@ -47,6 +47,7 @@ Weapon::Weapon(string my_name) {
     avoid_rate = data[4];
     force_rate = data[5];
     is_distance = data[6];
+	category = 4;
     has_equip = false;
 }
 
@@ -86,9 +87,19 @@ void Weapon::setEquipment(bool status) {
     has_equip = status;
 }
 
+bool Weapon::getHas_Equip()
+{
+	return has_equip;
+}
+
 void Weapon::showInformation()
 {
 	cout << "Ãû³Æ£º" << this->getName() << "\t" << "Á¦Á¿£º" << this->getStrength() << "\t" <<
 		"·ÀÓù£º" << this->getDefense() << "\t" << "ÉÁ±Ü£º" << this->getAvoidRate() << "\t" <<
-		"±©»÷£º" << this->getForceRate() << "\t" << "¹¥»÷ËÙ¶È" << this->getAttackSpeed();
+		"±©»÷£º" << this->getForceRate() << "\t" << "¹¥»÷ËÙ¶È£º" << this->getAttackSpeed() << endl;
+}
+
+int Weapon::getCategory()
+{
+	return category;
 }
