@@ -28,7 +28,7 @@ void Bag::ShowWeapon(Character& gamer) {
 		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
 		SetConsoleTextAttribute(consolehwnd, 12);
 		cout << "背包里没有物品！" << endl;
-		SetConsoleTextAttribute(consolehwnd, 9);
+		SetConsoleTextAttribute(consolehwnd, 14);
 		system("pause");
 		system("cls");
 		
