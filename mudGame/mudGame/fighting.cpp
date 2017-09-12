@@ -72,7 +72,7 @@ void fighting::fight(task* point, int task)
 					srand((unsigned int)time(NULL));
 					//i = rand() % (10 / ((int)(character->getHitRate() * 10))) + 1;
 					if (!(this->skill->iflearnt(select)))
-						;
+						round--;
 					else
 					{
 						force = this->skill->UseSkill(select, force);//剩余法力的计算，显示使用该技能之后剩余法力
