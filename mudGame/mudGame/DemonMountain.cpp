@@ -66,7 +66,8 @@ void DemonMountain::operate(Character *gamer)
 			cout << smalllayerintroduction[4] << endl;
 			cout << smalllayerintroduction[5] << endl;
 			while(cout <<"ÇëÊäÈëÄãµÄÑ¡Ôñ£º") {
-                if(cin >> choice) {
+
+				if(cin >> choice) {
                     if(choice == 1 || choice == 2) {
                         point->finishTask(12);
                         point->finishTask(13);
